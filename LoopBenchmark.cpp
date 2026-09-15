@@ -1,6 +1,7 @@
-#include <cstdint>
 #include <iostream>
 #include <chrono>
+#include <iomanip>
+#include <cstdint>
 
 int main(int argc, char* argv[]) {
   uint32_t N;
@@ -20,9 +21,12 @@ int main(int argc, char* argv[]) {
   std::chrono::duration<double, std::milli> elapsedDuration = (end - start);
 
   std::cout << "=== LOOP BENCHMARK ===\n";
-  std::cout << "Loop Start: " << start << std::endl;
+  std::cout << "N = " << N << std::endl;
   std::cout << "Increment: " << count << std::endl;
+  std::cout << "Loop Start: " << start << std::endl;
   std::cout << "Loop Ends: " << end << std::endl;
+
+  std::cout << std::fixed << std::setprecision(6);
   std::cout << "Elapse duration: " << elapsedDuration << std::endl;
 
   return 0;
